@@ -20,14 +20,20 @@ function App() {
 ReactDOM.render(<App />, document.getElementById("root"));`
   );
 
+  function copyText() {
+    navigator.clipboard.writeText(code);
+    alert("Text copied!");
+  }
+
   return (
     <div className="main-div">
-      <h1>React Simple Code editor</h1>
+      <h1>React Simple Code Editor</h1>
       <div className="desc">
         A simple no-frills code editor with syntax highlighting.
       </div>
       <a
         className="button"
+        target="_blank"
         href="https://github.com/Rohitb1107/simple-react-editor"
       >
         <button>See Code on GitHub</button>
@@ -44,6 +50,7 @@ ReactDOM.render(<App />, document.getElementById("root"));`
           }}
         />
       </div>
+      <button onClick={copyText}>Copy above code</button>
     </div>
   );
 };
